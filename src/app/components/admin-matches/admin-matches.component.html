@@ -1,0 +1,61 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Index</th>
+            <th>Score One</th>
+            <th>Score Two</th>
+            <th>team One</th>
+            <th>team Two</th>
+        </tr>
+
+        <tr *ngFor='let m of matches  ; let i =index'>
+            <td>{{i}}</td>
+            <td>
+                <span [ngStyle]="{'color': compare(m.ScoreOne,m.ScoreTwo)[1]}">
+                    {{m.ScoreOne}}
+            </span>
+            </td>
+            <td>
+                <span [ngStyle]="{'color': compare(m.ScoreTwo,m.ScoreOne)[1]}">
+                    {{m.ScoreTwo}}
+            </span>
+            </td>
+
+            <td><span [ngClass]="{'green-class': compare(m.ScoreOne,m.ScoreTwo)[0]=='win',
+
+                'red-class': compare(m.ScoreOne,m.ScoreTwo)[0]=='lose',
+                'blue-class' :compare(m.ScoreOne,m.ScoreTwo)[0]=='draw'}">
+                {{m.TeamOne }}
+                </span><span>
+                    {{compare(m.ScoreOne,m.ScoreTwo)[0]}}
+                </span>
+            </td>
+            <td><span [ngClass]="{'green-class': compare(m.ScoreTwo,m.ScoreOne)[0]=='win',
+
+                'red-class': compare(m.ScoreTwo,m.ScoreOne)[0]=='lose',
+                'blue-class' :compare(m.ScoreTwo,m.ScoreOne)[0]=='draw'}">
+                {{m.TeamTwo }}
+                </span><span>
+                    {{compare(m.ScoreTwo,m.ScoreOne)[0]}}
+                </span>
+            </td>
+
+
+
+            <td>
+
+
+                <button class='btn btn-info' (click)="goToDisplay(m._id)">display</button>
+                <button class='btn btn-warning' (click)="goToEdit(m._id)">edit</button>
+                <button class='btn btn-danger' (click)="delete(m._id)">delete</button>
+            </td>
+
+
+
+        </tr>
+
+    </table>
+
+
+
+</div>

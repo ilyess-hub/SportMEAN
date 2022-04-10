@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>index</th>
+            <th>name</th>
+            <th> poste</th>
+            <th>age</th>
+            <th> nbr</th>
+        </tr>
+
+        <tr *ngFor='let m of players ; let i=index'>
+            <td>{{i}}</td>
+            <td>{{m.name}}</td>
+            <td>{{m.poste}}</td>
+            <td>{{m.age}}</td>
+            <td>{{m. nbr}}</td>
+            <td>
+
+
+                <button class='btn btn-info' (click)='Display(m._id)'>Display</button>
+                <button class='btn btn-warning' (click)='Edit(m._id)'>edit</button>
+                <button class='btn btn-danger' (click)='delete(m._id)'>delete</button>
+            </td>
+
+
+
+        </tr>
+
+    </table>
+
+
+
+</div>
