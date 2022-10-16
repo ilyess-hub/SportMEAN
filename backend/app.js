@@ -7,7 +7,7 @@ const Team = require('./models/team');
 const Player = require('./models/player');
 const User = require('./models/user')
     // import body parser module
-const bodyParser = require("body-parser");
+    const bodyParser = require("body-parser");
 
 const app = express(); //creation application BE
 const mongoose = require('mongoose'); // import  mongoose
@@ -358,6 +358,14 @@ app.post('/users/signup', (req, res) => {
     })
 
 });
+
+
+
+
+
+
+
+
 
 app.post('/users/login', (req, res) => {
     console.log('Here login', req.body);

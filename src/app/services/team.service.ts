@@ -17,7 +17,7 @@ export class TeamService {
   editteam(team: any) {
     return this.httpClient.put<{message: any}>(`${ this.teamUrl }/${team._id}`, team);
 
-  }team
+  }
 
   getAllteames() {
    return  this.httpClient.get<{teams :any}>(this.teamUrl);

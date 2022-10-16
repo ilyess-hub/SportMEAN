@@ -39,10 +39,8 @@ export class AdminMatchesComponent implements OnInit {
       console.log('data from be', data.message)
 
     this.matchService.getAllMatches().subscribe((data) => {
-      
         this.matches=data.matches
     })
-    
       });
   }
 
